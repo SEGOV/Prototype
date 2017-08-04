@@ -3,6 +3,7 @@ package ru.gsv.ai.client.charts;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import org.moxieapps.gwt.highcharts.client.*;
 import org.moxieapps.gwt.highcharts.client.plotOptions.*;
+import ru.gsv.ai.client.constatnts.ChartsConstants;
 
 public class ZoomableTimeSeriesChart
 {
@@ -14,10 +15,10 @@ public class ZoomableTimeSeriesChart
                 .setZoomType(BaseChart.ZoomType.X)
                 .setSpacingRight(20)
                 .setChartTitle(new ChartTitle()
-                        .setText("USD to EUR exchange rate from 2006 through 2008")
+                        .setText(ChartsConstants.UPLOAD_CHART_DATA)
                 )
                 .setChartSubtitle(new ChartSubtitle()
-                        .setText("Click and drag in the plot area to zoom in")
+                        .setText(ChartsConstants.CLICK_AND_DRAG_IN_THE_PLOT_AREA_TO_ZOOM_IN)
                 )
                 .setToolTip(new ToolTip()
                         .setShared(true)
@@ -49,14 +50,14 @@ public class ZoomableTimeSeriesChart
                 .setAxisTitleText(null);
 
         chart.getYAxis()
-                .setAxisTitleText("Exchange rate")
+                .setAxisTitleText(ChartsConstants.EXCHANGE_RATE)
                 .setMin(0.6)
                 .setStartOnTick(false)
                 .setShowFirstLabel(false);
 
         chart.addSeries(chart.createSeries()
                 .setType(Series.Type.AREA)
-                .setName("USD to EUR")
+                .setName(ChartsConstants.USD_TO_EUR)
                 .setPlotOptions(new AreaPlotOptions()
                         .setPointInterval(24 * 3600 * 1000)
                         .setPointStart(getTime("2006-01-01"))

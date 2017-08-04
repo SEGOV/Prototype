@@ -3,6 +3,7 @@ package ru.gsv.ai.client.charts;
 import org.moxieapps.gwt.highcharts.client.*;
 import org.moxieapps.gwt.highcharts.client.labels.*;
 import org.moxieapps.gwt.highcharts.client.plotOptions.*;
+import ru.gsv.ai.client.constatnts.ChartsConstants;
 
 public class BasicAreaChart
 {
@@ -10,7 +11,7 @@ public class BasicAreaChart
 
         final Chart chart = new Chart()
                 .setType(Series.Type.AREA)
-                .setChartTitleText("US and USSR nuclear stockpiles")
+                .setChartTitleText(ChartsConstants.RESULT_CHART_OF_STRATEGY)
                 .setChartSubtitleText(
                         "Source: " +
                                 "<a href=\"http://thebulletin.metapress.com/content/c4120650912x74k7/fulltext.pdf\">" +
@@ -67,7 +68,7 @@ public class BasicAreaChart
                 );
 
         chart.addSeries(chart.createSeries()
-                .setName("USA")
+                .setName(ChartsConstants.BALANCE)
                 .setPoints(new Number[]{
                         0, 0, 0, 0, 0, 6, 11, 32, 110, 235, 369, 640,
                         1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
@@ -79,7 +80,7 @@ public class BasicAreaChart
                 })
         );
         chart.addSeries(chart.createSeries()
-                .setName("USSR/Russia")
+                .setName(ChartsConstants.EQUITY)
                 .setPoints(new Number[]{
                         0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                         5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
